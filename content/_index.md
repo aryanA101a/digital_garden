@@ -2,13 +2,14 @@
 title: 🤚 Hi, I'm Aryan
 ---
 
-I am a keen learner. Currently I excel at **[app development](https://aryana101a.github.io/)**. I am interested in **systems programming**, **compilers** and **computer architecture**.
+I am a keen learner. Currently I excel at [app development](https://aryana101a.github.io). I am interested in **systems programming**, **compilers** and **computer architecture**.
 
 
 
 
 ## Notes
-- [Linux Notes](<file:///home/aryanarora/digital_garden/digital_garden/content/books/Aryan Arora Resume.pdf>)
+- [Linux Notes](notes/linuxNotes.pdf)
+- <a href="notes/linuxNotes.pdf">ok</a>
 
 ## Books to read
 - [Crafting Interpreters](http://www.craftinginterpreters.com/contents.html)
