@@ -10,10 +10,8 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 ## Notes
 - <a href="notes/linuxNotes.pdf">Linux Notes</a>
 
-## Books to read
-- [Crafting Interpreters](http://www.craftinginterpreters.com/contents.html)
-- [Computer Networks: A systems approach](https://book.systemsapproach.org/index.html)
-- [Linux Insides](https://0xax.gitbooks.io/linux-insides/content/)
+## [[books/books|Books to read]]
+
 
 ## Courses to take
 - [Mit 6.S081 Operating system](https://www.youtube.com/playlist?list=PLTsf9UeqkReZHXWY9yJvTwLJWYYPcKEqK) and [labs](https://pdos.csail.mit.edu/6.S081/2021/labs/)
@@ -23,3 +21,7 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 
 ## Building
 - [nin](https://github.com/aryanA101a/nin)  - Command-line text editor from scratch in C. Following [this.](https://viewsourcecode.org/snaptoken/kilo/index.html)
+
+## Read Later
+- https://teachyourselfcs.com/
+- https://timothya.com/learning/
