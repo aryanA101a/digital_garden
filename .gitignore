@@ -3,5 +3,7 @@ public
 resources
 .idea
 content/.obsidian
+content/.trash
+content/private
 assets/indices/linkIndex.json
 assets/indices/contentIndex.json
