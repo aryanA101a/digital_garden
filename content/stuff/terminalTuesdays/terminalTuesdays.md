@@ -1,0 +1,5 @@
+---
+title: "terminalTuesdays"
+---
+
+- [[tt3]]

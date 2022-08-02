@@ -5,7 +5,7 @@ title: 🤚 Hi, I'm Aryan
 
 
 I am a keen learner. Currently I excel at [app development](https://aryana101a.github.io). I am interested in **systems programming**, **compilers** and **computer architecture**.
-
+!
 
 ## [[notes/notes|Notes]]
 
@@ -19,3 +19,5 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 
 ## Building
 - [nin](https://github.com/aryanA101a/nin)  - Command-line text editor from scratch in C. Following [this.](https://viewsourcecode.org/snaptoken/kilo/index.html)
+
+## [[stuff/stuff|Stuff]]

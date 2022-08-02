@@ -1,4 +1,4 @@
 ---
 title: "notes"
 ---
-- <a href="notes/linuxNotes.pdf">Linux Notes</a>
+- [[notes/linux_notes/LinuxNotes|LinuxNotes]]
