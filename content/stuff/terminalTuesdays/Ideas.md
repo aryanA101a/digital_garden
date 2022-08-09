@@ -1,0 +1,14 @@
+---
+title: "Ideas"
+---
+- [ ] history
+- [ ] diff and patch
+- [ ] tar
+- [ ] curl
+- [ ] df
+- [ ] redirection
+- [ ] pipes
+- [ ] youtube-dl
+- [ ] at
+- [ ] cron
+- [ ] navigation nonsense: cd -, cd ..
