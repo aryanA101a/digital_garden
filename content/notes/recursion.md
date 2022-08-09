@@ -11,11 +11,11 @@ Example - **<span style="color: purple">Subset Problem</span>**
 
 **<span style="color: orange;">Choice</span>**
 
-![[Choice.png]]
+![[notes/images/Choice.png]]
 
 **<span style="color: teal;">Decision</span>**
 
-![[Decision.png]]
+![[notes/images/Decision.png]]
 
 ---
 
