@@ -443,7 +443,7 @@ GNU Image Manipulation Program s a feature-rich image retouching and editing too
 
 #### ssh
 
-*   ssh [username@remote-server.com](mailto:username@remote-server.com)
+*   `ssh mailto:username@remote-serve`
 
 #### shutdown
 
