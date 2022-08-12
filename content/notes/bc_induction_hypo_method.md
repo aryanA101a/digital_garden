@@ -20,6 +20,8 @@ nums(7) = 1 2 3 4 5 6 7
 nums(6) = 1 2 3 4 5 6
 
 ## Induction
+We can infer from the above hypothesis that nums(n-1) prints numbers from 1 to n-1 and nums(n) required to print n after printing numbers from 1 to n-1.
+And that completes our induction step.
 
 ```
 nums(n){ //prints 1 to n
@@ -30,6 +32,8 @@ nums(n){ //prints 1 to n
 ```
 
 ## Base Condition
+Think of the smallest valid input.
+
 ```
 if(n==1){
 	cout<<n

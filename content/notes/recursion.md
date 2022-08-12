@@ -20,10 +20,13 @@ Example - **<span style="color: purple">Subset Problem</span>**
 ---
 
 ### Steps to solve recursive problem
-
 1. Determine the approach
 	- Decision - Design a Recursive Tree - [[ip_op_method|Input/Output Method]]
 	- Making input smaller - [[bc_induction_hypo_method|Base Condition - Induction - Hypothesis Method]]
 	- Choice Diagram - DP
 	
 1. F*ck the problem -> write the `code`
+
+### Questions
+1. [[height_of_binary_tree|Height of binary tree]]
+2. [[notes/sort_array|Sort an array]]
