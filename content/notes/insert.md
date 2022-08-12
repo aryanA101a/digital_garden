@@ -13,7 +13,7 @@ title: "insert"
 **sort([0 1],2) = [0 1 2]**
 
 ## Induction
-After sort(n-1) we need to [[insert]] it back to its proper place
+
 ```
 insert(v,element){ 
 	val=v[v.size()-1]

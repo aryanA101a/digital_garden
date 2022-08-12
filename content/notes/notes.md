@@ -1,5 +1,5 @@
 ---
 title: "notes"
 ---
-- [[linux_notes/LinuxNotes|LinuxNotes]]
-- [[recursion]]
+- [[notes/linux_notes/LinuxNotes|LinuxNotes]]
+- [[notes/recursion|Recursion]]

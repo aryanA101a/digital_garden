@@ -16,7 +16,7 @@ title: "Sort an array"
 **sort([1 5 0]) = [0 1 5]**
 
 ## Induction
-After sort(n-1) we need to [[insert]] it back to its proper place
+After sort(n-1) we need to [[notes/insert|insert]] it back to its proper place
 ```
 sort(v){ 
 	temp=v[v.size()-1]
