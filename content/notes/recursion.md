@@ -30,3 +30,6 @@ Example - **<span style="color: purple">Subset Problem</span>**
 ### Questions
 1. [[notes/height_of_binary_tree|Height of binary tree]]
 2. [[notes/sort_array|Sort an array]]
+3. [[notes/delete_middle_element_of_a_stack|Delete middle element of a stack]]
+4. [[notes/reverse_a_stack|Reverse a stack]]
+5. [[notes/kth_symbol_in_grammar|Kth symbol in grammar]]
