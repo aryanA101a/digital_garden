@@ -1518,7 +1518,7 @@ Used to create and repeatedly edit and/or extract contents
 *   Run a command on the remote system: `ssh <remotesystem> <command>`
 *   It needs the remote password
 *   **Secure Copy (scp):** Program that uses **ssh** to securely move/copy files between networked hosts
-*   scp <user@remotesystem>:/home/user/
+*   `scp <user@remotesystem>:/home/user/`
 
 
 
