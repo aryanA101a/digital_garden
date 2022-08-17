@@ -34,3 +34,4 @@ Example - **<span style="color: purple">Subset Problem</span>**
 4. [[notes/reverse_a_stack|Reverse a stack]]
 5. [[notes/kth_symbol_in_grammar|Kth symbol in grammar]]
 6. [[notes/tower_of_hanoi|Tower of Hanoi]]
+7. [[notes/subsets|Subsets]]
