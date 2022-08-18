@@ -35,3 +35,4 @@ Example - **<span style="color: purple">Subset Problem</span>**
 5. [[notes/kth_symbol_in_grammar|Kth symbol in grammar]]
 6. [[notes/tower_of_hanoi|Tower of Hanoi]]
 7. [[notes/subsets|Subsets]]
+8. [[notes/permutations_with_spaces|Permutations with spaces]]
