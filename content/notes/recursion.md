@@ -36,3 +36,4 @@ Example - **<span style="color: purple">Subset Problem</span>**
 6. [[notes/tower_of_hanoi|Tower of Hanoi]]
 7. [[notes/subsets|Subsets]]
 8. [[notes/permutations_with_spaces|Permutations with spaces]]
+9. [[notes/permutation_with_cases|Permutation with cases]]
