@@ -37,3 +37,6 @@ Example - **<span style="color: purple">Subset Problem</span>**
 7. [[notes/subsets|Subsets]]
 8. [[notes/permutations_with_spaces|Permutations with spaces]]
 9. [[notes/permutation_with_cases|Permutation with cases]]
+10. [[notes/generate_parentheses|Generate Parentheses]]
+11. [[notes/print_n_binary_numbers_having_more_ones_than_zeros|Print N binary numbers having more ones than zeros]]
+12. [[notes/josephus_problem|Josephus problem]]
