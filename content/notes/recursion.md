@@ -27,6 +27,8 @@ Example - **<span style="color: purple">Subset Problem</span>**
 	
 1. F*ck the problem -> write the `code`
 
+### [[notes/patterns|Patterns]]
+
 ### Questions
 1. [[notes/height_of_binary_tree|Height of binary tree]]
 2. [[notes/sort_array|Sort an array]]
@@ -35,8 +37,11 @@ Example - **<span style="color: purple">Subset Problem</span>**
 5. [[notes/kth_symbol_in_grammar|Kth symbol in grammar]]
 6. [[notes/tower_of_hanoi|Tower of Hanoi]]
 7. [[notes/subsets|Subsets]]
-8. [[notes/permutations_with_spaces|Permutations with spaces]]
-9. [[notes/permutation_with_cases|Permutation with cases]]
-10. [[notes/generate_parentheses|Generate Parentheses]]
-11. [[notes/print_n_binary_numbers_having_more_ones_than_zeros|Print N binary numbers having more ones than zeros]]
-12. [[notes/josephus_problem|Josephus problem]]
+8. [[notes/perfect_sum_subsets|Perfect Sum Subsets]]
+9. [[notes/perfect_sum_first|Perfect Sum First]]
+10. [[notes/permutations_with_spaces|Permutations with spaces]]
+11. [[notes/permutation_with_cases|Permutation with cases]]
+12. [[notes/generate_parentheses|Generate Parentheses]]
+13. [[notes/print_n_binary_numbers_having_more_ones_than_zeros|Print N binary numbers having more ones than zeros]]
+14. [[notes/josephus_problem|Josephus problem]]
+15. [[notes/combination_sum_I|Combination Sum I]]

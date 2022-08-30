@@ -21,3 +21,5 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 - [nin](https://github.com/aryanA101a/nin)  - Command-line text editor from scratch in C. Following [this.](https://viewsourcecode.org/snaptoken/kilo/index.html)
 
 ## [[stuff/stuff|Stuff]]
+
+## [[blogs/blogs|Blogs]]
