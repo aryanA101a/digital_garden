@@ -2,7 +2,7 @@
 title: "command-line text editor learnings"
 ---
 # What I learned while making a command-line text editor from scratch in C?
-![[blogs/Pasted image 20220828185654.png]]
+![[blogs/nin.png]]
 
 Ordinarily, I do not create such low-level projects, but as I was getting more inclined towards systems-programming I had to do something to get my feet wet in this domain. And while creating this project, I got mesmerized by the level of detail which I had to take care of while implementing every feature. Also, I got to know why C is harassed for memory management.
 

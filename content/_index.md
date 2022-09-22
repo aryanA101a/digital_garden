@@ -17,6 +17,8 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 
 ## [[Read Later]]
 
+## [[abstractions|Abstractions To Uncover]]
+
 ## [[stuff/stuff|Stuff]]
 
 ## [[blogs/blogs|Blogs]]
