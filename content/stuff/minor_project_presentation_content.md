@@ -1,5 +1,5 @@
 ---
-title: "minor project presentation"
+title: "minor project presentation content"
 ---
 
 ## Villi 
