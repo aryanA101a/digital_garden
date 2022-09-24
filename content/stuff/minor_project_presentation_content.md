@@ -4,7 +4,10 @@ title: "minor project presentation"
 
 ## Villi 
 
-![[stuff/villi.png]]
+![[stuff/villi 1.png]]
+
+
+![[stuff/villi_on_bg.png]]
 
 ---
 ## What are we creating?
@@ -26,7 +29,7 @@ title: "minor project presentation"
 A computer requests a file from the **central server**, then it copies the file to itself using **File Transfer Protocol**
 
 ---
-## What is BitTorrent Protocol?
+## What is Bit-Torrent Protocol?
 
 ![[stuff/p2p.png]]
 
