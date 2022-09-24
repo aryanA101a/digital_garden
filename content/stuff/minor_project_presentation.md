@@ -4,6 +4,8 @@ title: "minor project presentation"
 
 ## Villi 
 
+![[stuff/villi.png]]
+
 ---
 ## What are we creating?
 **A Bit-Torrent Client**
