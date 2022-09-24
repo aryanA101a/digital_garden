@@ -13,13 +13,13 @@ title: "minor project presentation"
 ---
 ## What is it based on?
 **Bit-Torrent Protocol**
+
 ![seeder_leecher](https://www.researchgate.net/profile/Minas-Gjoka/publication/228356133/figure/fig1/AS:301986110033920@1449010507254/Typical-operation-of-BitTorrent.png)
 
 
 ---
 ## How traditional downloading works?
-
-![[stuff/p2p.png]]
+![[stuff/client_server.png]]
 
 A computer requests a file from the **central server**, then it copies the file to itself using **File Transfer Protocol**
 
@@ -93,12 +93,12 @@ A leecher is that computer in the distributed network who is downloading the fil
 - [Experimental] Magnet Links
 - [Experimental] Seeding mechanism
 ---
-## Why are we creating it?
-- To deeply get an understanding of the inner workings of BitTorrent Protocol
+## Learning Objectives
+- To get a deep understanding of the inner workings of BitTorrent Protocol
 
 ![](https://images.unsplash.com/photo-1583198432859-635beb4e8600?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80)
 
-- To understand **multi-threading** by implementing threads
+- To understand **multi-threading** by implementing threads in golang.
 
 ![](https://jenkov.com/images/java-concurrency/introduction-2.png)
 
