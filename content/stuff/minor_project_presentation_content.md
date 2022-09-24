@@ -118,3 +118,15 @@ Programming Language: **Go**
 UI Framework: **BubbleTea**
 
 ![](https://repository-images.githubusercontent.com/233130089/90d82180-07c4-11eb-873b-5a3d57eb0517)
+
+---
+## Roadmap
+- ### P1 
+	- Parse .torrent file
+	- Retrieve peers
+	- Parse tracker response
+- ### P2
+	- Complete Commandline Application
+- ### P3
+	- Terminal User Interface
+	- Experimental Features - Magnet Links and Seeding Mechanism
