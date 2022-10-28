@@ -11,7 +11,7 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 
 ## [[books/books|Books to read]]
 
-## [[Courses to take]]
+## [[Course Takelist]]
 
 ## [[Tutorials to take]]
 
