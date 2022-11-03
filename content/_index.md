@@ -13,11 +13,11 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 
 ## [[books/books|Books to read]]
 
-## [[Course Takelist]]
+## [[course_takelist]]
 
-## [[Tutorials to take]]
+## [[tutorials_to_take]]
 
-## [[Read Later]]
+## [[read_later]]
 
 ## [[abstractions|Abstractions To Uncover]]
 
