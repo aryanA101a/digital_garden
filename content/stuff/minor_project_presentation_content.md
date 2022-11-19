@@ -130,3 +130,61 @@ UI Framework: **BubbleTea**
 - ### P3
 	- Terminal User Interface
 	- Experimental Features - Magnet Links and Seeding Mechanism
+
+
+---
+---
+---
+
+## Recap
+
+Last time we parsed the tracker response and got a list of IP Addresses of peers.
+
+---
+## Downloading From Peers
+
+1.  Start a TCP connection with the peer. This is like starting a phone call.
+2.  Complete a two-way BitTorrent **handshake**. _“Hello?” “Hello."_
+3.  Exchange **messages** to download **pieces**. _“I’d like piece #231 please."
+
+---
+## Pieces and Blocks
+
+The file which is going to be downloaded is broken into **pieces** and those pieces are downloaded by a number of threads.
+![](https://blog.jse.li/torrent/pieces.png)
+
+These pieces itself are composed of **blocks** of 16KB which are downloaded by making **pipelined requests**
+![](https://camo.githubusercontent.com/c80ae0bd4f9ce570e1640b0b7755041c2bcde538dedd2349a23762f7b0fc5bd7/68747470733a2f2f6769746c61622e636f6d2f72697477696b3331302f626c6f672d646f63756d656e74732f7261772f6d61737465722f57726974652d612d546f7272656e742d436c69656e742d696e2d476f2d302f546f7272656e742d436c69656e742d426c6f636b732d322e706e67)
+
+---
+
+## Concurrency
+
+Golang provides a great way to deal with concurrency with **channels**
+Using **channels**, threads can safely access shared memory.
+![](https://learnetutorials.com/assets/images/go/channel/image1.png)
+
+## Worker Pool Pattern
+Worker Pool (aka Thread Pool) is _a pattern to achieve concurrency using fixed number of workers(threads) to execute multiple amount of tasks on a queue_.
+![](https://cdn.vivasoftltd.com/wp-content/uploads/2021/03/worker-pool-in-golang.png)
+
+---
+## Download Flow
+
+![](https://blog.jse.li/torrent/download.png)
+
+---
+
+## Progress
+
+#### Completed
+Command-line Client is completed. Supporting the original BitTorrent Specification(bep003)
+
+#### Currently Working On
+1. Multitracker Support(bep0012)
+2. UDP Tracker Support(bep0015)
+
+#### Future Goals
+1. TUI Support
+2. Magnet Link Support
+3. Seeding Support
