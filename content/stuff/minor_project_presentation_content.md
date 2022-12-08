@@ -178,13 +178,16 @@ Worker Pool (aka Thread Pool) is _a pattern to achieve concurrency using fixed n
 ## Progress
 
 #### Completed
-Command-line Client is completed. Supporting the original BitTorrent Specification(bep003)
+1. Command-line Client is completed. Supporting the original BitTorrent Specification(bep003)
+2. Multitracker Support(bep0012)
+3. UDP Tracker Support(bep0015)
 
-#### Currently Working On
-1. Multitracker Support(bep0012)
-2. UDP Tracker Support(bep0015)
 
 #### Future Goals
-1. TUI Support
+1. Better UI Support
 2. Magnet Link Support
 3. Seeding Support
+
+
+---
+
