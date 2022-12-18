@@ -7,9 +7,12 @@ title: "Readings"
 
 ---
 - [x] https://teachyourselfcs.com/
+- [x] [kilo](https://viewsourcecode.org/snaptoken/kilo/)
+- [x] [Building a BitTorrent client from the ground up in Go](https://blog.jse.li/posts/torrent/)
 - [ ] [How does a relational database work](http://coding-geek.com/how-databases-work/ "How does a relational database work")
 - [ ] [Writing a SQL database from scratch in Go: 1. SELECT, INSERT, CREATE and a REPL](https://notes.eatonphil.com/database-basics.html)
-- [ ] https://github.com/erikgrinaker/toydb
+- [ ] https://github.com/erikgrinaker/
+- [ ] https://www.compileralchemy.com/books/sqlite-internals/
 - [ ] [SMTP protocol basics from scratch in Go: receiving email from Gmail](https://notes.eatonphil.com/handling-email-from-gmail-smtp-protocol-basics.html)
 - [ ] [Implementing zip archiving in Golang: unzipping](https://notes.eatonphil.com/implementing-zip-in-go-unzipping.html)
 - [ ] [uxn](https://wiki.xxiivv.com/site/uxn.html)
