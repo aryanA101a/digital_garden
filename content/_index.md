@@ -7,9 +7,8 @@ title: 🤚 Hii, I'm Aryan
 I am a keen learner. Currently I excel at [app development](https://aryana101a.github.io). I am interested in **systems programming**, **compilers** and **computer architecture**.
 !
 
-## [[Book-readings]]
+## [[Learning-Path]]
 ## [[Readings]]
-## [[Courses]]
 ## [[notes/notes|Notes]]
 ## [[Abstractions-to-uncover]]
 ## [[Try]]
