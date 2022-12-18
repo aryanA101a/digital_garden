@@ -4,7 +4,7 @@ title: "permutations with spaces"
 
 ### Question: https://practice.geeksforgeeks.org/problems/permutation-with-spaces3627/1
 
-![[notes/images/permutation_with_spaces.excalidraw.svg]]
+![[img/permutation_with_spaces.excalidraw.svg]]
 
 ```c++
 void solve(string ip,string op,vector<string>& res){

@@ -1,5 +1,5 @@
 ---
-title: 🤚 Hi, I'm Aryan
+title: 🤚 Hii, I'm Aryan
 ---
 ![[img/index.svg|150]] ![[img/brain.svg|150]]
 
@@ -7,22 +7,19 @@ title: 🤚 Hi, I'm Aryan
 I am a keen learner. Currently I excel at [app development](https://aryana101a.github.io). I am interested in **systems programming**, **compilers** and **computer architecture**.
 !
 
+## [[Book-readings]]
+## [[Book-readings]]
+## [[Courses]]
 ## [[notes/notes|Notes]]
+## [[Abstractions-to-uncover]]
+## [[Try]]
+## [[Games-to-play|Games To Play]]
+## [[Stuff]]
+## [[Myanimelist]]
 
-## [[games_to_play|Games To Play]]
 
-## [[books/books|Books to read]]
 
-## [[course_takelist | course takelist]]
 
-## [[tutorials_to_take | tutorials to take]]
 
-## [[read_later | read later]]
 
-## [[abstractions|Abstractions To Uncover]]
 
-## [[stuff/stuff|Stuff]]
-
-## [[blogs/blogs|Blogs]]
-
-## [[myanimelist]]

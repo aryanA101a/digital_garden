@@ -3,10 +3,10 @@ title: "GSOC_ORG-IDEA_Tier_List"
 ---
 
 - # CCExtractor-improve scalability on start
-![[stuff/Pasted image 20221112113816.png]]
+![[img/Pasted image 20221112113816.png]]
 
 - # KDE-Okular user interface for e-ink tables
-![[stuff/Pasted image 20221112114004.png]]
+![[img/Pasted image 20221112114004.png]]
 
 - # JITSI-AV1 codec support
 ## Overview
@@ -56,4 +56,4 @@ We provide container images appropriate for the most common programming language
 The next step is to facilitate the creation of instructor-customized container images (with specific languages, packages, databases, etc.). Care must be taken to ensure small container size and efficient performance.
 
 - # Open Astronomy-Scraper rewrite
-![[stuff/open-astro.png]]
+![[img/open-astro.png]]

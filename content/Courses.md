@@ -1,5 +1,5 @@
 ---
-title: "Courses Takelist"
+title: "Courses"
 ---
 - [ ] [Mit 6.S081 Operating system](https://www.youtube.com/playlist?list=PLTsf9UeqkReZHXWY9yJvTwLJWYYPcKEqK) and [labs](https://pdos.csail.mit.edu/6.S081/2021/labs/)
 - [ ] [Nand to Tetris](https://store.steampowered.com/app/1444480/Turing_Complete/)

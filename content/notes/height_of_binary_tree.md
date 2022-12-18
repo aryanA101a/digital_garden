@@ -18,7 +18,7 @@ title: "Height of binary tree"
 **nums(root->right) = height of right subtree**
 
 ## Induction
-![[notes/images/tree.excalidraw.svg]]
+![[img/tree.excalidraw.svg]]
 
 ```
 height(root){ 

@@ -6,9 +6,9 @@ There is a method to draw recursive tree which is called **<span style="color: c
 
 **<span style="color: lightseagreen;">Structure</span>**
 
-![[notes/images/ip_op_method_structure.png]]
+![[img/ip_op_method_structure.png]]
 
 Eg:
 
-![[notes/images/ip_op_example.excalidraw.svg]]
+![[img/ip_op_example.excalidraw.svg]]
 

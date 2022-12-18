@@ -4,10 +4,10 @@ title: "minor project presentation content"
 
 ## Villi 
 
-![[stuff/villi 1.png]]
+![[img/villi 1.png]]
 
 
-![[stuff/villi_on_bg.png]]
+![[img/villi_on_bg.png]]
 
 ---
 ## What are we creating?
@@ -24,14 +24,14 @@ title: "minor project presentation content"
 
 ---
 ## How traditional downloading works?
-![[stuff/client_server.png]]
+![[img/client_server.png]]
 
 A computer requests a file from the **central server**, then it copies the file to itself using **File Transfer Protocol**
 
 ---
 ## What is Bit-Torrent Protocol?
 
-![[stuff/p2p.png]]
+![[img/p2p.png]]
 
 BitTorrent is a protocol for downloading and distributing files across the Internet.
 Participants in the BitTorrent network, called **peers**, download pieces of files from _each other, this is what makes it a **peer-to-peer** protocol.  
@@ -50,7 +50,7 @@ We’ll investigate how this works, and build our own client that can find peers
 ---
 ## Tracker
 
-![[stuff/Pasted image 20220923200609.png|500]]
+![[img/Pasted image 20220923200609.png|500]]
 
 A tracker is a special type of server that keeps track of seeders and leechers and helps efficient transmission and reassembly of the copied file.
 

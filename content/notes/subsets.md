@@ -1,7 +1,7 @@
 ---
 title: "Subsets"
 ---
-![[notes/images/ip_op_example.excalidraw.svg]]
+![[img/ip_op_example.excalidraw.svg]]
 ```
 void solve(vector<int> ip,vector<int> op,vector<vector<int>>& res){
         
