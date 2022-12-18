@@ -1,5 +1,5 @@
 ---
-title: "Small-readings"
+title: "Readings"
 ---
 
 ### Recurring Reads
@@ -13,4 +13,3 @@ title: "Small-readings"
 - [ ] [SMTP protocol basics from scratch in Go: receiving email from Gmail](https://notes.eatonphil.com/handling-email-from-gmail-smtp-protocol-basics.html)
 - [ ] [Implementing zip archiving in Golang: unzipping](https://notes.eatonphil.com/implementing-zip-in-go-unzipping.html)
 - [ ] [uxn](https://wiki.xxiivv.com/site/uxn.html)
-- [ ] 

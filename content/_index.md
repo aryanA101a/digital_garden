@@ -8,7 +8,7 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 !
 
 ## [[Book-readings]]
-## [[Book-readings]]
+## [[Readings]]
 ## [[Courses]]
 ## [[notes/notes|Notes]]
 ## [[Abstractions-to-uncover]]
