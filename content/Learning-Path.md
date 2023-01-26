@@ -23,6 +23,7 @@ title: "Learning-Path"
 
 ### SYSTEMS PROGRAMMING
 - [ ] [Nand to Tetris](https://store.steampowered.com/app/1444480/Turing_Complete/)
+- [ ] [Emulating 6502 in c++](https://www.youtube.com/watch?v=qJgsuQoy9bc&list=PLLwK93hM93Z13TRzPx9JqTIn33feefl37)
 - [ ] Computer Systems: A Programmer's Perspective
 - [ ] [ProgrammingGroundUp](http://nongnu.askapache.com/pgubook/ProgrammingGroundUp-1-0-booksize.pdf)
 - [ ] [Programming Embedded Systems in C and C++](https://barrgroup.com/embedded-systems/books/programming-embedded-systems)
@@ -31,3 +32,6 @@ title: "Learning-Path"
 
 ### AI/ML
 - [ ] [Practical Deep Learning for Coders](https://course.fast.ai/)
+
+### Calculus
+- [ ] [https://betterexplained.com/calculus/](https://betterexplained.com/calculus/)
