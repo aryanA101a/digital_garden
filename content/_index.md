@@ -12,7 +12,7 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 ## [[Abstractions-to-uncover]]
 ## [[Try]]
 ## [[Games-to-play|Games To Play]]
-## [[Stuff]]
+## [[stuff/Stuff| Stuff]]
 
 
 
