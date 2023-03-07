@@ -2,4 +2,4 @@
 title: "flutter-bootcamp-presentation"
 ---
 
-[[stuff/day-0|day-0]]
+[[stuff/flutter-bootcamp/day-0|day-0]]
