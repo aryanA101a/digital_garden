@@ -95,5 +95,31 @@ that fits.
 ### Timeline/Roadmap
 
 **P1**: Knowledge Gathering and Prerequisite Study
-**P2**: Complete Prequsite Study & Freelist Implementation
+**P2**: Implicit Freelist Implementation
 **P3**: Binned Freelist/Segregated Freelist Implementation
+
+---
+
+### Implicit Freelist Organization
+![[stuff/Pasted image 20230424225017.png]]
+![[stuff/Pasted image 20230424224955.png]]
+
+---
+
+### Coalescing Free Blocks
+![[stuff/Pasted image 20230424224639.png]]
+![[stuff/Pasted image 20230424224709.png]]
+![[stuff/Pasted image 20230424224722.png]]
+![[stuff/Pasted image 20230424224734.png]]
+
+---
+
+### Implementation
+
+Lets have a look at some real code 🫡
+
+**Refrences**
+-   [Boilerplate and testfiles/scripts taken from Stanford cs107 assignment 7 (class of 2018)](https://web.stanford.edu/class/archive/cs/cs107/cs107.1186/assign7/)
+-   [Computer Systems : A programmer's perspective](https://csapp.cs.cmu.edu/)
+
+---

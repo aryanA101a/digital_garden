@@ -6,8 +6,7 @@ title: 🤚 Hii, I'm Aryan
 
 I am a keen learner. Currently I excel at [app development](https://aryana101a.github.io/resume). I am interested in **systems programming**, **compilers** and **computer architecture**.
 
-## [[Learning-Path]]
-## [[Readings]]
+## [[Learning-Resources]]
 ## [[notes/notes|Notes]]
 ## [[Abstractions-to-uncover]]
 ## [[Try]]
