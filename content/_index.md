@@ -13,6 +13,7 @@ I am a keen learner. Currently I excel at [app development](https://aryana101a.g
 ## [[Try]]
 ## [[Games-to-play|Games To Play]]
 ## [[stuff/stuff|Stuff]]
+## [[anime-watchlist|Anime Watchlist]]
 
 
 
