@@ -1,5 +1,5 @@
 ---
-title: "Learning-Path"
+title: "Learning-Resources"
 ---
 
 ### OS
