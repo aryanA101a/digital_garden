@@ -29,9 +29,6 @@ title: "Learning-Path"
 - [ ] [Emulating 6502 in c++](https://www.youtube.com/watch?v=qJgsuQoy9bc&list=PLLwK93hM93Z13TRzPx9JqTIn33feefl37)
 - [ ] Computer Systems: A Programmer's Perspective 
 - [ ] [ProgrammingGroundUp](http://nongnu.askapache.com/pgubook/ProgrammingGroundUp-1-0-booksize.pdf)
-- [ ] [Programming Embedded Systems in C and C++](https://barrgroup.com/embedded-systems/books/programming-embedded-systems)
-- [ ] [Embedded Systems - Shape The World: Microcontroller Input/Output](https://www.edx.org/course/embedded-systems-shape-the-world-microcontroller-i)
-- [ ] [Embedded Systems - Shape The World: Multi-Threaded Interfacing](https://www.edx.org/course/embedded-systems-shape-the-world-multi-threaded-in)
 - [x] [Build your own text editor in c](https://viewsourcecode.org/snaptoken/kilo/)
 - [x] [Bit Torrent Client in Go](https://blog.jse.li/posts/torrent/)
 - [x] [Bootsector Snake From Scratch (x86 asm)](https://www.youtube.com/watch?v=wQfOYeZDKWk&t=158s)
@@ -58,18 +55,20 @@ title: "Learning-Path"
 - [ ] [Neural Networks](https://karpathy.ai/zero-to-hero.html)
 - [ ] [MLOPS]( https://in.coursera.org/specializations/machine-learning-engineering-for-production-mlops)
 
+### Embedded
+- [ ] [Programming Embedded Systems in C and C++](https://barrgroup.com/embedded-systems/books/programming-embedded-systems)
+- [ ] [Embedded Systems - Shape The World: Microcontroller Input/Output](https://www.edx.org/course/embedded-systems-shape-the-world-microcontroller-i)
+- [ ] [Embedded Systems - Shape The World: Multi-Threaded Interfacing](https://www.edx.org/course/embedded-systems-shape-the-world-multi-threaded-in)
+- [ ] practical-electronics-for-inventors
+- [ ] [EMBEDDED SOFTWARE ENGINEERING 101](https://embedded.fm/blog/ese101)
+
+### Patterns
+- [ ] [Mr4thProgramming](https://www.youtube.com/@Mr4thProgramming/playlists)
+
 ### Physics and Mathematics
 - [ ] [Physics and Mathematics Self-Study Project](https://www.diegovera.org/projects)
 - [ ] [Theoritical Minimum](https://theoreticalminimum.com/courses)
 - [ ] [https://betterexplained.com/calculus/](https://betterexplained.com/calculus/)
-
-### Embedded
-- [ ] practical-electronics-for-inventors
-- [ ] [EMBEDDED SOFTWARE ENGINEERING 101](https://embedded.fm/blog/ese101)
-
-
-### Patterns
-- [ ] [Mr4thProgramming](https://www.youtube.com/@Mr4thProgramming/playlists)
 
 ### A world outside STEM
 - [ ] [Personality and it's Transformations](https://www.youtube.com/playlist?list=PL22J3VaeABQBlN8DUor7SKWCwSghcqlY5)
