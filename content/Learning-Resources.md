@@ -2,6 +2,12 @@
 title: "Learning-Resources"
 ---
 
+### Recreational Programming
+- [ ] [File Diff in Python From Scratch](https://www.youtube.com/watch?v=tm60fuF5v54)
+- [ ] [Machine Learning in C](https://www.youtube.com/watch?v=PGSba51aRYU)
+- [ ] [Search Engine in Rust](https://www.youtube.com/playlist?list=PLpM-Dvs8t0VZXC-91PpIp-eAt0WF5SKEv)
+
+
 ### OS
 - [ ] [Mit 6.S081 Operating system](https://www.youtube.com/playlist?list=PLTsf9UeqkReZHXWY9yJvTwLJWYYPcKEqK) and [labs](https://pdos.csail.mit.edu/6.S081/2021/labs/)
 - [ ] [Linux Insides](https://0xax.gitbooks.io/linux-insides/content/)
