@@ -1,0 +1,148 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="Before getting started we need to take a pause and think about what is a heap allocator. What does it do?"><title>From Concept to Reality: Crafting an ImplicitList Heap Allocator</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://aryana101a.github.io/digital_garden//icon.png><link href=https://aryana101a.github.io/digital_garden/styles.d2f738589684858118a26e4c88e3fef5.min.css rel=stylesheet><link href=https://aryana101a.github.io/digital_garden/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://aryana101a.github.io/digital_garden/js/darkmode.6d4fe0ca5b63f848ebeef87b162635d8.min.js></script>
+<script src=https://aryana101a.github.io/digital_garden/js/util.9825137f5e7825e8553c68ce39ac9e44.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://aryana101a.github.io/digital_garden/js/popover.37b1455b8f0603154072b9467132c659.min.js></script>
+<script src=https://aryana101a.github.io/digital_garden/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://aryana101a.github.io/digital_garden/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://aryana101a.github.io/digital_garden/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://aryana101a.github.io/digital_garden/",fetchData=Promise.all([fetch("https://aryana101a.github.io/digital_garden/indices/linkIndex.ab68b32084f4af85344f3ce98d6e233f.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://aryana101a.github.io/digital_garden/indices/contentIndex.eba314f61215e380a1b4bbb1e9bf191d.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addCollapsibleCallouts(),initPopover("https://aryana101a.github.io/digital_garden",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!0;drawGraph("https://aryana101a.github.io/digital_garden",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script>window.Million={navigate:e=>window.location.href=e,prefetch:()=>{}},window.addEventListener("DOMContentLoaded",()=>{init(),render()})</script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://aryana101a.github.io/digital_garden/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://aryana101a.github.io/digital_garden/>🪄 Hi, I'm Aryan</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>From Concept to Reality: Crafting an ImplicitList Heap Allocator</h1><p class=meta>Last updated
+May 16, 2023</p><ul class=tags></ul><p>Before getting started we need to take a pause and think about what is a heap allocator. What does it do?
+A heap allocator is a program that manages the memory(ram) required by the processes or user programs at the run-time. You must be thinking about what exactly happens under this management. It talks with the kernel to request memory from the system. Now, this requested memory comes as a contiguous chunk after the previous allocation and the heap allocator has to somehow divide it into pieces and create metadata on it to store and delete the chunks requested by the user or a process.
+Heap allocators are of two types:</p><ul><li>Implicit Heap Allocators: These are also known as Garbage Collectors. In modern high-level languages such as Go, dart, java, etc, gc does the heavy lifting of memory management.</li><li>Explicit Heap Allocators: This type of allocator supports memory allocation, extension and deallocation requests. In languages such as C, memory management has to be done manually.</li></ul><a href=#why-should-we-care><h3 id=why-should-we-care><span class=hanchor arialabel=Anchor># </span>Why should we care?</h3></a><p>We can choose not to, but I&rsquo;m sure you&rsquo;re curious about what happens under the hood and would like to clear out this abstraction of how manual memory management happens under the hood by implementing a basic heap allocator.</p><a href=#concepts><h2 id=concepts><span class=hanchor arialabel=Anchor># </span>Concepts</h2></a><p>To create our little heap allocator we&rsquo;ll need to understand some nitty-gritty details of what happens behind the scenes and explore some issues.
+<strong>Note</strong>- the concepts explained below are not in their entirety, but enough for us to get started in our journey. To get a deep understanding of the concepts we&rsquo;ve talked about, you can refer to
+<a href=https://pages.cs.wisc.edu/~remzi/OSTEP/ rel=noopener>Three Easy Pieces</a> and
+<a href=https://csapp.cs.cmu.edu/ rel=noopener>Computer Systems: A Programmer&rsquo;s Perspective</a></p><a href=#paging><h3 id=paging><span class=hanchor arialabel=Anchor># </span>Paging</h3></a><p>In simple words, the operating system chops the ram in equal pieces which are called frames and then maps them with virtual addresses(to provide memory security), these mapped frames are called pages and this whole process is called paging.
+If there&rsquo;s a process running, the memory it occupies is not contiguous but is distributed in the form of different pages across the ram. Let&rsquo;s see this in the next concept.</p><a href=#process-memory-map><h3 id=process-memory-map><span class=hanchor arialabel=Anchor># </span>Process Memory Map</h3></a><p><strong>Code Segment</strong> - This reigion of process&rsquo;s memory has the code of running program or process in the form of cpu insturctions. It is read only.</p><p><strong>Data Segement</strong> - This reigion of process&rsquo;s memory has global variables, constants, static and local static variables.</p><p><strong>BSS</strong> - This reigion of process&rsquo;s memory has uninitialized global variables, constants, static and local static variables.</p><p><strong>Stack Pointer</strong> - It is a pointer in the stack memory which does all the heavy work of manipulating stack memory.</p><p><strong>Stack</strong> - This region of process&rsquo;s memory has function arguments, local variables and return addresses of functions.It is fast as the process of memory allocation and deallocation is as simple as simple stack pointer manipulation forward and backwards, but the trade off is that we have to know beforehand how much memory will be required.</p><p><strong>Brk</strong> - It is a pointer which points to the end hf heap memory.</p><p><strong>Heap</strong> - This region of memory is our area of concern. This is dynamic memory which can be allocated, extended and deallocated at runtime. In C language this can be done by malloc(), realloc() and free(). These are the APIs we are going to implement.</p><ul><li><strong>malloc()</strong> is the api which the user can use to dynamically allocate the memory. When it is called, it checks a raw datastructure, that in our case is implicit freelist, for available memory in the heap. If the memory is available it marks the free block of memory it found in the heap and return the pointer to the starting of this block else it calls sbrk() or mmap() to request more pages from the kernel, inturn the kernel extends the newly requested memory after the end of heap,moves the brk pointer to the new end and returns the address of previous brk.</li><li><strong>realloc()</strong> extends or contracts the previously allocated memory either by joining the previously allocated block to its left or right or both else by finding a new box of appropriate size and then copying the data from the previous block and to the new block and freeing the previous block.</li><li><strong>free()</strong> as the name suggest it frees the previously allocated block.
+We&rsquo;ll talk in more depth in the while implementing them.</li></ul><a href=#fragmentation><h3 id=fragmentation><span class=hanchor arialabel=Anchor># </span>Fragmentation</h3></a><p>Fragmentation is an issue in which we are left with unused pieces of memory that cannot be used seprately but together forms a signifacant amoun of memory.</p><p>There are two types of fragmentation:</p><ol><li><strong>Internal Fragmentation</strong> - This type of fragmentation usually arises due to due to allocator allocating more than requested memory, just to satisfy the alignment criteria.</li></ol><p>What is alignment here?
+While allocating memory we have to abide by the rule of allocating memory in multiples of a number. This number ususally depends on the architecture of the processor. On 64-bit processors memory is usually 8 byte aligned, which means if requested memory is not in multiple of eight then the heap allocator rounds the request to the multiple of 8 bytes.</p><p>Why is it required?
+The maximum memory a processor can fetch in one cycle is the size of its architecture.
+Supoose we have a 32 bit processor, it can only fetch 4 bytes in one instruction.
+If a user asks wants to store an int and a char, it&rsquo;d require him to allocate (4 + 1) bytes for this purpose.
+Unaligned memory access can cause inefficcient retrival and therefore slowdown in performance, which is why the the data is also stored in a way that the addresses are multiple of the architecture.
+<strong>Note -</strong> For scope of this project, we&rsquo;ll be creating a heap allocator for 32bit system which will be 8byte aligned. Why for 32bit system and 8 bit aligned? To keep the complexity at an average and since, we need our allocator to support with 64 bit systems.</p><ol start=2><li><strong>External Fragmentation</strong> - This usually arises when there are varius small free chunks of memory are distributed accross the heap, if aggregated they can satisy an allocation request but there is no single block to satisfy the request.</li></ol><a href=#implementation-issues><h3 id=implementation-issues><span class=hanchor arialabel=Anchor># </span>Implementation Issues</h3></a><ul><li><strong>Free Block Organization</strong> - Heap is just raw memory. We can manage the allocation, deallocation, etc request however we want. We need to keep a track of what size block resides where to efficiently accomodate future requests.</li><li><strong>Placememnt</strong> - How do we choose a new block for allocation?</li><li><strong>Splitting</strong> - Do we split the block if the requested allocation is smaller than the available block?</li><li><strong>Coalesce</strong> - Do we join the free blocks to get bigger blocks? If yes should we do it before allocating or after freeing a block?</li></ul><a href=#placing-allocated-blocks><h3 id=placing-allocated-blocks><span class=hanchor arialabel=Anchor># </span>Placing Allocated Blocks</h3></a><p>Now suppose we have a linear list of allocated and free blocks. How do we go about them and find the block of requred size?</p><ul><li><strong>First fit</strong> searches the free list from the beginning and chooses the first free
+block that fits.</li><li><strong>Next fit</strong> is similar to first fit, but instead of starting each search at
+the beginning of the list, it starts each search where the previous search left off.</li><li><strong>Best fit</strong> examines every free block and chooses the free block with the smallest size
+that fits.</li></ul><a href=#implicit-free-list><h3 id=implicit-free-list><span class=hanchor arialabel=Anchor># </span>Implicit Free List</h3></a><p>This is the raw data structre that will power our heap allocator. Each block is of 4 bytes. Now to keep the track of allocations and deallocations, we need to store some metadata along each block on the list. For this we&rsquo;ll attach a header and a footer to each block. The footer will be the copy of the header. A block will look like this:
+Image</p><p><strong>Header</strong>
+The size of header is 4 bytes. The header stores the size of the block and the allocation status. Since the size of the blocks have to be in multiples of 8, we can use this as our advantage to store more data in the same header. The multiples of 8 have a special property in binary representation. The last three bits are zeros. So we can use the last bit to store allocation status. 1 for allocated and 0 for unallocated.
+For example if a block is of size 48 bytes, then the binary representation of its header will be 110000 for the free block and 110001 for allocated block. To read size or allocation status out of this header we can use bit manipulation.</p><p><strong>Payload</strong>
+This starts just after the header. This is the place where the data will be stored. If a use allocates some memory then the user gets a pointer to this payload and not the header.</p><p><strong>Padding</strong> happens in the case when we need to maintaing the alignment.</p><p>Now coming back to the implicit freelist. It starts with an empty block which is also called a <strong>padding block</strong>. Then, there is a <strong>prologue block</strong> of 8 bytes and allocated status, it only contains an header and a footer. Then, there are the regular blocks. And lastly the implicit freelist ends with <strong>epilogue block</strong> which is only a block of one header which shows size as zero and status as allocated. The blocks other than regular blocks are there to fight off the edge cases.
+Image</p><a href=#coalescing><h3 id=coalescing><span class=hanchor arialabel=Anchor># </span>Coalescing</h3></a><p>it is a process of joining blocks to form a larger block. It is required to combat fragmentation.
+In our implementation of the allocator we&rsquo;ll implement coalescing after we free the block.
+How exactly?
+After we free the block, we check for free blocks after and behind it, if there are, we join the blocks together to form a larger block.
+Here&rsquo;s a depection of how it works:
+Image</p><a href=#implementation><h2 id=implementation><span class=hanchor arialabel=Anchor># </span>Implementation</h2></a><p>Now that we&rsquo;ve eaten the brain food we need to create a heap allocator, we can start building it.
+to create our work easier I&rsquo;ll provide you a
+<a href=/digital_garden/ rel=noopener class=internal-link data-src=/digital_garden/>template</a> from
+<a href=https://web.stanford.edu/class/archive/cs/cs107/cs107.1186/assign7/ rel=noopener>Stanford&rsquo;s CS107 Assignment 7</a> to jump-start our allocator and test its robustness with all possible loads.
+The instructions to get started with these files are there on the assignment pdf.
+The files contain a bump allocator, which is a barebones allocator. You need to study the bump allocator and the testharness.c file in order to to get familiar with the template and march forwards for our goal.</p><p>Before starting, let me provide you some c macros, to make our work easier and code clean.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#define WSIZE 4
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define DSIZE 8
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define MAX(x, y) ((x) &gt; (y) ? (x) : (y))
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>/* Pack a size and allocated bit into a word */
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define PACK(size, alloc) ((size) | (alloc))
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>/* Read and write a word at address p */
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define GET(p) (*(unsigned int *)(p))
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define PUT(p, val) (*(unsigned int *)(p) = (val))
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>/* Read the size and allocated fields from address p */
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define GET_SIZE(p) (GET(p) &amp; ~0x7)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define GET_ALLOC(p) (GET(p) &amp; 0x1)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>/* Given block ptr bp, compute address of its header and footer */
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define HDRP(bp) ((char *)(bp)-WSIZE)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define FTRP(bp) ((char *)(bp) + GET_SIZE(HDRP(bp)) - DSIZE)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>/* Given block ptr bp, compute address of next and previous blocks */
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define NEXT_BLKP(bp) ((char *)(bp) + GET_SIZE(((char *)(bp)-WSIZE)))
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define PREV_BLKP(bp) ((char *)(bp)-GET_SIZE(((char *)(bp)-DSIZE)))
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#define ALIGNMENT 8
+</span></span></code></pre></td></tr></table></div></div><p>These macros are from the
+<a href=https://csapp.cs.cmu.edu/ rel=noopener>CSAPP</a> book.</p><p>As the name suggests the PACK macro packs the size and alllocated status to fill in the content of header.
+The GET and PUT macro can be used to retrieve and flush the contents of/to a single block of 4 bytes.
+GIven the pointer to the header or footer the GET_ALLOC and GET_SIZE macros retrieves the allocation status and size.
+Block Pointer always points to the payload of a block.
+HDRP macro will returh the address of the header given the block pointer.</p><p>Go through alll the macros, it&rsquo;ll tighten up the concept of implicit freelist and help working with it.</p><p>In the implicit.c file there are empty functions, waiting for us to turn our newly grasped knowledge into code.</p><a href=#bool-myinitvoid--size_t><h3 id=bool-myinitvoid--size_t><span class=hanchor arialabel=Anchor># </span><code>bool myinit(void *, size_t)</code></h3></a></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://aryana101a.github.io/digital_garden/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by Aryan Arora using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://aryana101a.github.io/digital_garden/>Home</a></li><li><a href=https://www.linkedin.com/in/aryanar0ra/>Linkedin</a></li><li><a href=https://github.com/aryanA101a>Github</a></li></ul></footer></div></div></body></html>
