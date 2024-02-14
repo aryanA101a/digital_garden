@@ -1,15 +1,13 @@
 ---
 title: major-project_II_presentation_content
 ---
-RUSH: Command LIne Text Editor
+### RUSH: Command LIne Text Editor
 ![](https://user-images.githubusercontent.com/23309033/187076235-c68ab092-8fd6-4d64-abd5-def1aba36862.png)
 
----
-#### Description
+**Description**
 
 RUSH is a command-line text editor inspired by the simplicity and functionality of the legendary nano text editor. Developed as a foray into systems programming, RUSH provides an immersive dive into low-level details while implementing essential features. From taking input directly from the keyboard to managing output on the screen, RUSH offers a comprehensive exploration of system calls and terminal manipulation.
 
-#### Features
 
 **Key Features:**
 
@@ -25,7 +23,7 @@ RUSH is a command-line text editor inspired by the simplicity and functionality 
 
 ---
 
-#### Understanding Terminals and Terminal Emulators
+### Understanding Terminals and Terminal Emulators
 
 **1. Terminal:**
 
@@ -45,7 +43,7 @@ RUSH is a command-line text editor inspired by the simplicity and functionality 
 
 ---
 
-#### Understanding VT100 Terminal
+### Understanding VT100 Terminal
 
 ![](https://www.oldcomputr.com/wp-content/uploads/2015/11/digital_vt100-7349.jpg)
 
@@ -76,6 +74,10 @@ RUSH is a command-line text editor inspired by the simplicity and functionality 
 ---
 
 ### Progress
+
+---
+
+### References
 
 
 
