@@ -2,7 +2,8 @@
 title: major-project_II_presentation_content
 ---
 ### RUSH: Command LIne Text Editor
-![](https://user-images.githubusercontent.com/23309033/187076235-c68ab092-8fd6-4d64-abd5-def1aba36862.png)
+
+![[stuff/Pasted image 20240214200021.png]]
 
 **Description**
 
