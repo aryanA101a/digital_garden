@@ -5,7 +5,7 @@ title: "Learning-Resources"
 ### Recreational Programming
 - [ ] [File Diff in Python From Scratch](https://www.youtube.com/watch?v=tm60fuF5v54)
 - [ ] [Machine Learning in C](https://www.youtube.com/watch?v=PGSba51aRYU)
-- [ ] [Search Engine in Rust](https://www.youtube.com/playlist?list=PLpM-Dvs8t0VZXC-91PpIp-eAt0WF5SKEv)
+- [ ] [Conway Game of Life in C](https://www.youtube.com/watch?v=I0ndY1Y4avQ&list=PLRnI_2_ZWhtCcyinpkAbk5M2A4UhdOP3A&index=3)
 
 
 ### OS
@@ -31,6 +31,9 @@ title: "Learning-Resources"
 - [ ] https://raytracing.github.io/
 
 ### SYSTEMS PROGRAMMING
+- [ ] [Create an OS in RISCV](https://www.youtube.com/playlist?list=PLvPRqTZ5Cxw5uxJ0_VKOUc0t5b6_IpBNS)
+- [ ] [RISCV Computer Architecture](https://www.youtube.com/playlist?list=PLJJuQ2QZniL7fKIPt8WJ9s8JALDoaBgGR)
+
 - [ ] [Nand to Tetris](https://store.steampowered.com/app/1444480/Turing_Complete/)
 - [ ] [Emulating 6502 in c++](https://www.youtube.com/watch?v=qJgsuQoy9bc&list=PLLwK93hM93Z13TRzPx9JqTIn33feefl37)
 - [ ] Computer Systems: A Programmer's Perspective 
@@ -77,7 +80,7 @@ title: "Learning-Resources"
 - [ ] [https://betterexplained.com/calculus/](https://betterexplained.com/calculus/)
 
 ### A world outside STEM
-- [ ] [Personality and it's Transformations](https://www.youtube.com/playlist?list=PL22J3VaeABQBlN8DUor7SKWCwSghcqlY5)
+- [ ] [Personality and it's Transformations](https://www.youtube.com/playlist?list=PL22J3VaeABQBlN8DUor7SKWCwSghcqlY5) *
 - [ ] [Justice](https://www.youtube.com/playlist?list=PL30C13C91CFFEFEA6)
 - [ ] [Human Behavioral Biology](https://www.youtube.com/playlist?list=PL848F2368C90DDC3D)
 
@@ -95,3 +98,5 @@ title: "Learning-Resources"
 - [ ] [Implementing zip archiving in Golang: unzipping](https://notes.eatonphil.com/implementing-zip-in-go-unzipping.html)
 - [ ] [uxn](https://wiki.xxiivv.com/site/uxn.html)
 - [ ] [Scraping HN](https://github.com/ClickHouse/ClickHouse/issues/29693)
+
+* : in progress
